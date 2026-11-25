@@ -1,9 +1,376 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Test</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strata Client</title>
+
+<style>
+:root{
+    --red:#ff2b2b;
+    --dark:#050505;
+    --card:#0d0d0d;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--dark);
+    color:white;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,.9);
+    border-bottom:1px solid rgba(255,43,43,.3);
+    z-index:1000;
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.links{
+    display:flex;
+    gap:20px;
+}
+
+.links a{
+    color:white;
+    text-decoration:none;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero-logo{
+    width:180px;
+    height:180px;
+    margin:auto auto 30px;
+    border:3px solid var(--red);
+    border-radius:20px;
+}
+
+.hero-title{
+    border:2px dashed var(--red);
+    padding:25px;
+    margin-bottom:20px;
+    border-radius:12px;
+    color:#ff6666;
+}
+
+.hero-text{
+    border:2px dashed #772020;
+    padding:30px;
+    margin-bottom:30px;
+    border-radius:12px;
+    color:#ff6666;
+}
+
+.download-dropdown{
+    position:relative;
+    display:inline-block;
+}
+
+.download-btn{
+    background:var(--red);
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.dropdown-content{
+    display:none;
+    position:absolute;
+    background:#111;
+    min-width:200px;
+    border:1px solid var(--red);
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.dropdown-content a{
+    display:block;
+    padding:15px;
+    color:white;
+    text-decoration:none;
+}
+
+.dropdown-content a:hover{
+    background:var(--red);
+}
+
+.download-dropdown:hover .dropdown-content{
+    display:block;
+}
+
+.divider{
+    height:2px;
+    background:linear-gradient(90deg,transparent,var(--red),transparent);
+}
+
+section{
+    padding:100px 10%;
+}
+
+.section-header{
+    text-align:center;
+    margin-bottom:40px;
+    color:#ff6666;
+    border:2px dashed var(--red);
+    padding:15px;
+    border-radius:12px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.feature-card{
+    background:var(--card);
+    padding:25px;
+    border-radius:15px;
+    border:1px solid rgba(255,43,43,.25);
+}
+
+.feature-placeholder{
+    color:#ff6666;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.shot{
+    height:220px;
+    border-radius:15px;
+    overflow:hidden;
+    background:#111;
+}
+
+.shot img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.stat{
+    background:var(--card);
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.number{
+    color:#ff6666;
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.label{
+    color:#aaa;
+}
+
+footer{
+    text-align:center;
+    padding:50px;
+    color:#666;
+}
+</style>
 </head>
-<body style="background:black;color:red;">
-<h1>STRATA TEST</h1>
+<body>
+
+<nav>
+<div class="nav-container">
+
+<div>STRATA</div>
+
+<div class="links">
+<a href="#features">Features</a>
+<a href="#screenshots">Screenshots</a>
+<a href="#stats">Stats</a>
+</div>
+
+</div>
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-logo">
+<!-- Put logo.png here -->
+</div>
+
+<div class="hero-title">
+TYPE_TITLE_HERE
+</div>
+
+<div class="hero-text">
+TYPE_DESCRIPTION_HERE
+</div>
+
+<div class="download-dropdown">
+
+<button class="download-btn">
+Download ▼
+</button>
+
+<div class="dropdown-content">
+
+<a href="downloads/StrataClient.dmg" download>
+macOS
+</a>
+
+<a href="downloads/StrataClientSetup.exe" download>
+Windows
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="divider"></div>
+
+<section id="features">
+
+<div class="section-header">
+TYPE_FEATURES_TITLE_HERE
+</div>
+
+<div class="features">
+
+<div class="feature-card">
+<div class="feature-placeholder">
+TYPE_FEATURE_1_HERE
+</div>
+</div>
+
+<div class="feature-card">
+<div class="feature-placeholder">
+TYPE_FEATURE_2_HERE
+</div>
+</div>
+
+<div class="feature-card">
+<div class="feature-placeholder">
+TYPE_FEATURE_3_HERE
+</div>
+</div>
+
+</div>
+
+</section>
+
+<div class="divider"></div>
+
+<section id="screenshots">
+
+<div class="section-header">
+TYPE_SCREENSHOTS_TITLE_HERE
+</div>
+
+<div class="gallery">
+
+<div class="shot">
+<img src="images/screenshot1.png">
+</div>
+
+<div class="shot">
+<img src="images/screenshot2.png">
+</div>
+
+<div class="shot">
+<img src="images/screenshot3.png">
+</div>
+
+<div class="shot">
+<img src="images/screenshot4.png">
+</div>
+
+</div>
+
+</section>
+
+<div class="divider"></div>
+
+<section id="stats">
+
+<div class="section-header">
+TYPE_STATS_TITLE_HERE
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<div class="number">TYPE_NUMBER_HERE</div>
+<div class="label">TYPE_LABEL_HERE</div>
+</div>
+
+<div class="stat">
+<div class="number">TYPE_NUMBER_HERE</div>
+<div class="label">TYPE_LABEL_HERE</div>
+</div>
+
+<div class="stat">
+<div class="number">TYPE_NUMBER_HERE</div>
+<div class="label">TYPE_LABEL_HERE</div>
+</div>
+
+<div class="stat">
+<div class="number">TYPE_NUMBER_HERE</div>
+<div class="label">TYPE_LABEL_HERE</div>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+STRATA CLIENT
+</footer>
+
 </body>
 </html>
