@@ -1,1089 +1,376 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Strata Client</title>
 
-
-
 <style>
-
 :root{
-
     --red:#ff2b2b;
-
     --dark:#050505;
-
     --card:#0d0d0d;
-
 }
-
-
 
 *{
-
     margin:0;
-
     padding:0;
-
     box-sizing:border-box;
-
-    font-family:Inter,Arial,sans-serif;
-
+    font-family:Arial,sans-serif;
 }
-
-
 
 html{
-
     scroll-behavior:smooth;
-
 }
-
-
 
 body{
-
     background:var(--dark);
-
     color:white;
-
 }
-
-
-
-/* NAVBAR */
-
-
 
 nav{
-
     position:fixed;
-
     top:0;
-
     width:100%;
-
+    background:rgba(0,0,0,.9);
+    border-bottom:1px solid rgba(255,43,43,.3);
     z-index:1000;
-
-    backdrop-filter:blur(15px);
-
-    background:rgba(0,0,0,.75);
-
-    border-bottom:1px solid rgba(255,43,43,.15);
-
 }
-
-
 
 .nav-container{
-
-    max-width:1400px;
-
+    max-width:1200px;
     margin:auto;
-
     padding:20px;
-
     display:flex;
-
     justify-content:space-between;
-
-    align-items:center;
-
 }
-
-
-
-.logo{
-
-    width:44px;
-
-    height:44px;
-
-    border:2px solid var(--red);
-
-    border-radius:12px;
-
-}
-
-
 
 .links{
-
     display:flex;
-
-    gap:30px;
-
+    gap:20px;
 }
-
-
 
 .links a{
-
-    text-decoration:none;
-
     color:white;
-
-    transition:.3s;
-
+    text-decoration:none;
 }
-
-
-
-.links a:hover{
-
-    color:var(--red);
-
-}
-
-
-
-/* HERO */
-
-
 
 .hero{
-
     min-height:100vh;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     text-align:center;
-
-    position:relative;
-
-    overflow:hidden;
-
+    padding:40px;
 }
-
-
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:800px;
-
-    height:800px;
-
-    background:radial-gradient(
-
-        circle,
-
-        rgba(255,0,0,.2),
-
-        transparent 70%
-
-    );
-
-}
-
-
 
 .hero-content{
-
-    z-index:2;
-
-    width:90%;
-
-    max-width:1000px;
-
+    max-width:900px;
 }
-
-
 
 .hero-logo{
-
     width:180px;
-
     height:180px;
-
-    margin:auto;
-
+    margin:auto auto 30px;
     border:3px solid var(--red);
-
-    border-radius:24px;
-
-    margin-bottom:30px;
-
-    overflow:hidden;
-
+    border-radius:20px;
 }
-
-
-
-.hero-logo img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-}
-
-
 
 .hero-title{
-
-    height:70px;
-
     border:2px dashed var(--red);
-
+    padding:25px;
     margin-bottom:20px;
-
     border-radius:12px;
-
+    color:#ff6666;
 }
-
-
 
 .hero-text{
-
-    height:110px;
-
     border:2px dashed #772020;
-
-    margin-bottom:35px;
-
+    padding:30px;
+    margin-bottom:30px;
     border-radius:12px;
-
+    color:#ff6666;
 }
-
-
-
-/* DOWNLOAD DROPDOWN */
-
-
 
 .download-dropdown{
-
     position:relative;
-
     display:inline-block;
-
 }
-
-
 
 .download-btn{
-
     background:var(--red);
-
     color:white;
-
     border:none;
-
-    padding:16px 40px;
-
-    border-radius:14px;
-
-    font-size:18px;
-
+    padding:15px 35px;
+    border-radius:12px;
     cursor:pointer;
-
-    font-weight:bold;
-
-    transition:.25s;
-
+    font-size:18px;
 }
-
-
-
-.download-btn:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:0 0 25px rgba(255,0,0,.7);
-
-}
-
-
 
 .dropdown-content{
-
     display:none;
-
     position:absolute;
-
-    left:0;
-
-    top:110%;
-
-    min-width:220px;
-
-    background:#121212;
-
+    background:#111;
+    min-width:200px;
     border:1px solid var(--red);
-
-    border-radius:14px;
-
+    border-radius:10px;
     overflow:hidden;
-
 }
-
-
 
 .dropdown-content a{
-
     display:block;
-
-    text-decoration:none;
-
+    padding:15px;
     color:white;
-
-    padding:14px;
-
-    transition:.25s;
-
+    text-decoration:none;
 }
-
-
 
 .dropdown-content a:hover{
-
     background:var(--red);
-
 }
-
-
 
 .download-dropdown:hover .dropdown-content{
-
     display:block;
-
 }
-
-
-
-/* DIVIDER */
-
-
 
 .divider{
-
     height:2px;
-
-    background:linear-gradient(
-
-        90deg,
-
-        transparent,
-
-        var(--red),
-
-        transparent
-
-    );
-
+    background:linear-gradient(90deg,transparent,var(--red),transparent);
 }
-
-
-
-/* SECTIONS */
-
-
 
 section{
-
     padding:100px 10%;
-
 }
-
-
 
 .section-header{
-
-    width:300px;
-
-    height:45px;
-
+    text-align:center;
+    margin-bottom:40px;
+    color:#ff6666;
     border:2px dashed var(--red);
-
-    margin:auto;
-
-    margin-bottom:50px;
-
+    padding:15px;
     border-radius:12px;
-
 }
-
-
-
-/* FEATURES */
-
-
 
 .features{
-
     display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
-
 }
-
-
 
 .feature-card{
-
     background:var(--card);
-
-    border:1px solid rgba(255,43,43,.2);
-
-    border-radius:18px;
-
-    padding:30px;
-
-    transition:.3s;
-
+    padding:25px;
+    border-radius:15px;
+    border:1px solid rgba(255,43,43,.25);
 }
-
-
-
-.feature-card:hover{
-
-    transform:translateY(-8px);
-
-    border-color:var(--red);
-
-}
-
-
-
-.icon{
-
-    width:60px;
-
-    height:60px;
-
-    border:2px solid var(--red);
-
-    border-radius:12px;
-
-    margin-bottom:20px;
-
-}
-
-
 
 .feature-placeholder{
-
-    height:80px;
-
-    border:2px dashed #702020;
-
-    border-radius:12px;
-
+    color:#ff6666;
 }
-
-
-
-/* SCREENSHOTS */
-
-
 
 .gallery{
-
     display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     gap:25px;
-
 }
-
-
 
 .shot{
-
     height:220px;
-
-    border-radius:18px;
-
+    border-radius:15px;
     overflow:hidden;
-
-    border:1px solid rgba(255,43,43,.2);
-
     background:#111;
-
 }
-
-
 
 .shot img{
-
     width:100%;
-
     height:100%;
-
     object-fit:cover;
-
 }
-
-
-
-/* STATS */
-
-
 
 .stats{
-
     display:grid;
-
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-
     gap:25px;
-
 }
-
-
 
 .stat{
-
-    padding:40px;
-
-    border-radius:18px;
-
     background:var(--card);
-
-    border:1px solid rgba(255,43,43,.2);
-
+    padding:25px;
+    border-radius:15px;
     text-align:center;
-
 }
-
-
 
 .number{
-
-    width:100px;
-
-    height:40px;
-
-    border:2px dashed var(--red);
-
-    margin:auto auto 15px;
-
+    color:#ff6666;
+    font-size:20px;
+    margin-bottom:10px;
 }
-
-
 
 .label{
-
-    width:120px;
-
-    height:18px;
-
-    border:2px dashed #702020;
-
-    margin:auto;
-
+    color:#aaa;
 }
-
-
-
-/* DOWNLOAD PANEL */
-
-
-
-.download-section{
-
-    max-width:900px;
-
-    margin:auto;
-
-    background:linear-gradient(
-
-        180deg,
-
-        rgba(255,0,0,.15),
-
-        rgba(255,0,0,.03)
-
-    );
-
-    padding:60px;
-
-    border-radius:22px;
-
-    border:1px solid rgba(255,43,43,.2);
-
-    text-align:center;
-
-}
-
-
-
-.download-title{
-
-    width:300px;
-
-    height:45px;
-
-    border:2px dashed var(--red);
-
-    margin:auto auto 30px;
-
-}
-
-
-
-/* FOOTER */
-
-
 
 footer{
-
     text-align:center;
-
     padding:50px;
-
-    color:#777;
-
+    color:#666;
 }
-
-
-
-@media(max-width:700px){
-
-
-
-.links{
-
-    display:none;
-
-}
-
-
-
-.hero-logo{
-
-    width:140px;
-
-    height:140px;
-
-}
-
-
-
-}
-
-
-
-.hero-title,
-
-.hero-text,
-
-.section-header,
-
-.feature-placeholder,
-
-.number,
-
-.label{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    color:#ff6666;
-
-    font-weight:bold;
-
-    padding:10px;
-
-}
-
-
-
-.hero-text{
-
-    line-height:1.6;
-
-}
-
 </style>
-
 </head>
-
-
-
 <body>
 
-
-
 <nav>
-
 <div class="nav-container">
 
-<div class="logo"></div>
-
-
+<div>STRATA</div>
 
 <div class="links">
-
 <a href="#features">Features</a>
-
 <a href="#screenshots">Screenshots</a>
-
 <a href="#stats">Stats</a>
-
-<a href="#download">Download</a>
-
 </div>
 
 </div>
-
 </nav>
-
-
 
 <section class="hero">
 
-
-
 <div class="hero-content">
 
-
-
 <div class="hero-logo">
-
-<!-- Replace with logo image -->
-
-<!-- <img src="images/logo.png"> -->
-
+<!-- Put logo.png here -->
 </div>
-
-
 
 <div class="hero-title">
-
 TYPE_TITLE_HERE
-
 </div>
-
-
 
 <div class="hero-text">
-
 TYPE_DESCRIPTION_HERE
-
 </div>
-
-
 
 <div class="download-dropdown">
 
-
-
 <button class="download-btn">
-
 Download ▼
-
 </button>
-
-
 
 <div class="dropdown-content">
 
-
+<a href="downloads/StrataClient.dmg" download>
+macOS
+</a>
 
 <a href="downloads/StrataClientSetup.exe" download>
-
 Windows
-
 </a>
 
-
-
-<a href="downloads/StrataClient.dmg" download>
-
-macOS
-
-</a>
-
-
+</div>
 
 </div>
 
-
-
 </div>
-
-
-
-</div>
-
-
 
 </section>
 
-
-
 <div class="divider"></div>
-
-
 
 <section id="features">
 
-
-
 <div class="section-header">
-
-TYPE_SECTION_TITLE_HERE
-
+TYPE_FEATURES_TITLE_HERE
 </div>
-
-
 
 <div class="features">
 
-
+<div class="feature-card">
+<div class="feature-placeholder">
+TYPE_FEATURE_1_HERE
+</div>
+</div>
 
 <div class="feature-card">
-
-<div class="icon"></div>
-
 <div class="feature-placeholder">
-
-TYPE_FEATURE_DESCRIPTION_HERE
-
+TYPE_FEATURE_2_HERE
 </div>
-
 </div>
-
-
 
 <div class="feature-card">
-
-<div class="icon"></div>
-
 <div class="feature-placeholder">
-
-TYPE_FEATURE_DESCRIPTION_HERE
-
+TYPE_FEATURE_3_HERE
+</div>
 </div>
 
 </div>
-
-
-
-<div class="feature-card">
-
-<div class="icon"></div>
-
-<div class="feature-placeholder">
-
-TYPE_FEATURE_DESCRIPTION_HERE
-
-</div>
-
-</div>
-
-
-
-</div>
-
-
 
 </section>
 
-
-
 <div class="divider"></div>
-
-
 
 <section id="screenshots">
 
-
-
 <div class="section-header">
-
-TYPE_SECTION_TITLE_HERE
-
+TYPE_SCREENSHOTS_TITLE_HERE
 </div>
-
-
 
 <div class="gallery">
 
-
-
 <div class="shot">
-
 <img src="images/screenshot1.png">
-
 </div>
 
-
-
 <div class="shot">
-
 <img src="images/screenshot2.png">
-
 </div>
 
-
-
 <div class="shot">
-
 <img src="images/screenshot3.png">
-
 </div>
-
-
 
 <div class="shot">
-
 <img src="images/screenshot4.png">
-
 </div>
 
-
-
 </div>
-
-
 
 </section>
-
-
 
 <div class="divider"></div>
 
-
-
 <section id="stats">
 
-
-
 <div class="section-header">
-
-TYPE_SECTION_TITLE_HERE
-
+TYPE_STATS_TITLE_HERE
 </div>
-
-
 
 <div class="stats">
 
-
+<div class="stat">
+<div class="number">TYPE_NUMBER_HERE</div>
+<div class="label">TYPE_LABEL_HERE</div>
+</div>
 
 <div class="stat">
-
-<div class="number">
-
-TYPE_NUMBER_HERE
-
+<div class="number">TYPE_NUMBER_HERE</div>
+<div class="label">TYPE_LABEL_HERE</div>
 </div>
-
-
-
-<div class="label">
-
-TYPE_LABEL_HERE
-
-</div>
-
-</div>
-
-
 
 <div class="stat">
-
-<div class="number">
-
-TYPE_NUMBER_HERE
-
+<div class="number">TYPE_NUMBER_HERE</div>
+<div class="label">TYPE_LABEL_HERE</div>
 </div>
-
-
-
-<div class="label">
-
-TYPE_LABEL_HERE
-
-</div>
-
-</div>
-
-
 
 <div class="stat">
-
-<div class="number">
-
-TYPE_NUMBER_HERE
-
-</div>
-
-
-
-<div class="label">
-
-TYPE_LABEL_HERE
-
+<div class="number">TYPE_NUMBER_HERE</div>
+<div class="label">TYPE_LABEL_HERE</div>
 </div>
 
 </div>
-
-
-
-<div class="stat">
-
-<div class="number">
-
-TYPE_NUMBER_HERE
-
-</div>
-
-
-
-<div class="label">
-
-TYPE_LABEL_HERE
-
-</div>
-
-</div>
-
-
-
-</div>
-
-
 
 </section>
 
-
-
 <footer>
-
-<!-- Footer Placeholder -->
-
+STRATA CLIENT
 </footer>
 
-
-
 </body>
-
 </html>
