@@ -169,21 +169,43 @@ section{
 
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+@media(max-width:900px){
+    .gallery{
+        grid-template-columns:1fr;
+    }
 }
 
 .shot{
-    height:220px;
-    border-radius:15px;
-    overflow:hidden;
     background:#111;
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid rgba(255,43,43,.25);
+    transition:.3s;
+}
+
+.shot:hover{
+    transform:translateY(-5px);
+    border-color:var(--red);
+    box-shadow:0 0 20px rgba(255,43,43,.3);
 }
 
 .shot img{
     width:100%;
-    height:100%;
+    height:320px;
     object-fit:cover;
+    display:block;
+}
+
+.shot-description{
+    padding:20px;
+    text-align:center;
+    background:#0d0d0d;
+    color:#bbb;
+    border-top:1px solid rgba(255,43,43,.25);
 }
 
 .stats{
@@ -241,11 +263,11 @@ footer{
 </div>
 
 <div class="hero-title">
-TYPE_TITLE_HERE
+Strata Client
 </div>
 
 <div class="hero-text">
-TYPE_DESCRIPTION_HERE
+Strata Client delivers a streamlined Minecraft experience with enhanced performance, modern visuals, and tools designed for competitive gameplay. 
 </div>
 
 <div class="download-dropdown">
@@ -277,7 +299,7 @@ Windows
 <section id="features">
 
 <div class="section-header">
-TYPE_FEATURES_TITLE_HERE
+Why choose Strata
 </div>
 
 <div class="features">
@@ -309,25 +331,49 @@ TYPE_FEATURE_3_HERE
 <section id="screenshots">
 
 <div class="section-header">
-TYPE_SCREENSHOTS_TITLE_HERE
+Screenshots
 </div>
 
 <div class="gallery">
 
 <div class="shot">
+
 <img src="images/screenshot1.png">
+
+<div class="shot-description">
+TYPE_SCREENSHOT_1_DESCRIPTION_HERE
+</div>
+
 </div>
 
 <div class="shot">
+
 <img src="images/screenshot2.png">
+
+<div class="shot-description">
+TYPE_SCREENSHOT_2_DESCRIPTION_HERE
+</div>
+
 </div>
 
 <div class="shot">
+
 <img src="images/screenshot3.png">
+
+<div class="shot-description">
+TYPE_SCREENSHOT_3_DESCRIPTION_HERE
+</div>
+
 </div>
 
 <div class="shot">
+
 <img src="images/screenshot4.png">
+
+<div class="shot-description">
+TYPE_SCREENSHOT_4_DESCRIPTION_HERE
+</div>
+
 </div>
 
 </div>
